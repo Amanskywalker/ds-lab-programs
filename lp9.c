@@ -37,9 +37,9 @@ void write(int n)
     int i,j,r2,c2;
     r2=s[0].r;
     c2=s[0].c;
-    for(i=1;i<=r2;i++)
+    for(i=0;i<r2;i++)
     {
-        for(j=1;j<=c2;j++)
+        for(j=0;j<c2;j++)
         {
             printf("%d\t",mat[i][j]);
         }
@@ -52,15 +52,16 @@ void search(int n)
     int k,i,pos=0;
     printf("Enter the Element to search:");
     scanf("%d",&k);
-    for(i=0;i<n;i++)
+    for(i=1;i<=n;i++)
     {
         if(k==s[i].v)
         {
             pos=i;
             break;
         }
+
     }
-    if(pos!=0)
+    if(pos)
         printf("Key Found at row=%d\t Column=%d \n",s[pos].r,s[pos].c);
     else
         printf("Key not Found\n");
@@ -79,7 +80,3 @@ int main()
     write(s[0].v);
     return 0;
 }
-
-/**
-    Author - Aman
-**/
