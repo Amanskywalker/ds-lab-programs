@@ -11,8 +11,8 @@
 	
 #define COMPARE(x,y) ((x==y)?0:(x>y)?1:-1)	
 struct node {
-int coeff,exp;
-struct node *link;
+	int coeff,expo;
+	struct node *link;
 };
 
 typedef struct node* NODE;
@@ -28,18 +28,18 @@ void display(NODE head)
 	while(temp!=head)
 	{
 		if(temp->coeff<0)
-			printf("%2dx^%2d",temp->coeff,temp->exp);
+			printf("%2dx^%2d",temp->coeff,temp->expo);
 		else
-			printf("+%2dx^%2d",temp->coeff,temp->exp);
+			printf("+%2dx^%2d",temp->coeff,temp->expo);
 		temp=temp->link;
 	}
 }
-NODE attach(int coeff,int exp,NODE head)
+NODE attach(int coeff,int expo,NODE head)
 {
 	NODE cur,temp;
 	MALLOC(temp,1,struct node);
 	temp->coeff=coeff;
-	temp->exp=exp;
+	temp->expo=expo;
 	cur=head->link;
 	while(cur->link!=head)
 		cur=cur->link;
@@ -50,7 +50,7 @@ NODE attach(int coeff,int exp,NODE head)
 }
 NODE readpoly(NODE head)
 {
-	int i=1,coeff,exp;
+	int i=1,coeff,expo;
 	printf("enter coeff as -999 to end the polynomial:");
 	while(1)
 	{
@@ -60,8 +60,8 @@ NODE readpoly(NODE head)
 		if(coeff==-999)
 			break;
 		printf("power of x:");
-		scanf("%d",&exp);
-		head=attach(coeff,exp,head);
+		scanf("%d",&expo);
+		head=attach(coeff,expo,head);
 		}
 	return head;
 	}
