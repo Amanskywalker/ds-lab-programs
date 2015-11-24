@@ -60,10 +60,11 @@ void search(int n)
             break;
         }
     }
-    if(pos!=0)
-        printf("Key Found at row=%d\t Column=%d \n",s[pos].r,s[pos].c);
-    else
+    if(pos==0)
         printf("Key not Found\n");
+    else
+        printf("Key Found at row=%d\t Column=%d \n",s[pos].r,s[pos].c);
+
 }
 
 int main()
