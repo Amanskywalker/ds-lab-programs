@@ -59,13 +59,13 @@ int main()
 
 stack stack::operator +(int x)
 {
-	if(top==s1.n)
+	if(top==n)
 	{
 		cout<<"\nstack Overflow";
 	}
     else
-        s1.a[top++]=x;
-	return s1;
+        a[top++]=x;
+	return *this;
 }
 
 
@@ -76,8 +76,8 @@ stack stack::operator --()
 		cout<<"\nstack empty\n";
 	}
     else
-        cout<<"\nElement popped \t"<<a[top--]<<"\n";
-	return s1;
+        cout<<"\nElement popped \t"<<a[--top]<<"\n";
+	return *this;
 }
 
 
