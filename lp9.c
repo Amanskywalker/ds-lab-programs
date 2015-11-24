@@ -52,7 +52,7 @@ void search(int n)
     int k,i,pos=0;
     printf("Enter the Element to search:");
     scanf("%d",&k);
-    for(i=0;i<n;i++)
+    for(i=0;i<=n;i++)
     {
         if(k==s[i].v)
         {
